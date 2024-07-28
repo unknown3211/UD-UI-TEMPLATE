@@ -6,10 +6,12 @@ window.addEventListener('message', (event) => {
         case 'closeUI':
             document.body.style.display = 'none';
             break;
+        case 'showMessage':
+            document.getElementById('message').innerText = event.data.message;
+            break;
     }
 });
 
 document.getElementById('closeButton').addEventListener('click', () => {
-    fetch('https://ud-uitemplate/exit', { method: 'POST' });
+    fetch('https://ud-ui-template/exit', { method: 'POST' });
 });
-
